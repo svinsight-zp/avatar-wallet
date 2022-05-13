@@ -21,9 +21,9 @@ const Dashboard = (props:any) => {
                 <Grid className="chainList">
                     {Object.entries(chains).map(([key, item]: [string, any]) => {
                         return (
-                            <div className="chainItem">
+                            <div className="chainItem" key={key} >
                                 <span className="activeBar" style={{background: theme.palette.primary.main, display: activeChain === key ? 'block' : 'none'}}></span>
-                                <Typography color="primary" variant='caption' className="icon" onClick={() => handleChangeChain(key)} key={key} style={{backgroundColor: activeChain === key ? item.background : theme.palette.background.paper}}>
+                                <Typography color="primary" variant='caption' className="icon" onClick={() => handleChangeChain(key)} style={{backgroundColor: activeChain === key ? item.background : theme.palette.background.paper}}>
                                    <img src={activeChain === key ? item.logo : item.inactiveLogo} alt="" width="18"/>
                                 </Typography>
                             </div>
